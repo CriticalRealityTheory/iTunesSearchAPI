@@ -1,21 +1,21 @@
 //
-//  AlbumListView.swift
+//  MovieListView.swift
 //  iTunesSearchAPI
 //
-//  Created by David Simpson on 8/5/22.
+//  Created by David Simpson on 8/20/22.
 //
 
 import SwiftUI
 
-struct AlbumListView: View {
+struct MovieListView: View {
     
-    @ObservedObject var viewModel = AlbumListViewModel()
+    @ObservedObject var viewModel = MovieListViewModel()
     
     var body: some View {
         
             List {
-                ForEach(viewModel.albums) { album in
-                    Text(album.collectionName)
+                ForEach(viewModel.movies) { movie in
+                    Text(movie.trackName)
                 }
                 
                 switch viewModel.state {
@@ -30,8 +30,8 @@ struct AlbumListView: View {
                         .frame(maxWidth: .infinity)
                     
                     case .loadedAll:
-                        //EmptyView()
-                        Color.gray
+                        EmptyView()
+                        
                     case .error(let message):
                         Text(message)
                         .foregroundColor(.pink)
@@ -43,10 +43,8 @@ struct AlbumListView: View {
     }
 }
 
-
-
-struct AlbumListView_Previews: PreviewProvider {
+struct MovieListView_Previews: PreviewProvider {
     static var previews: some View {
-        AlbumListView(viewModel: AlbumListViewModel())
+        MovieListView(viewModel: MovieListViewModel())
     }
 }

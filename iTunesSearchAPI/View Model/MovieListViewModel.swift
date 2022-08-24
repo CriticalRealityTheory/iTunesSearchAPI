@@ -1,30 +1,24 @@
 //
-//  AlbumListViewModel.swift
+//  MovieListViewModel.swift
 //  iTunesSearchAPI
 //
-//  Created by David Simpson on 8/4/22.
+//  Created by David Simpson on 8/20/22.
 //
 
 import Foundation
 import Combine
 
-// https://itunes.apple.com/search?term=jack+johnson&entity=album&limit=5&offset=10
-// https://itunes.apple.com/search?term=jack+johnson&entity=song&limit=5
-// https://itunes.apple.com/search?term=jack+johnson&entity=movie&limit=5
-
-
-class AlbumListViewModel: ObservableObject {
+class MovieListViewModel: ObservableObject {
     
+    @Published var movies: [Movie] = [Movie]()
     @Published var searchTerm: String = ""
-    @Published var albums: [Album] = [Album]()
     @Published var state: FetchState = .good
     
-    let limit: Int = 20
-    var page: Int = 0
-    
-    let service = APIService()
-    
+    private let service = APIService()
+        
     var subscriptions = Set<AnyCancellable>()
+    
+    let defaultLimits = 50
     
     init() {
         
@@ -33,17 +27,18 @@ class AlbumListViewModel: ObservableObject {
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink { [weak self] term in
                 self?.state = .good
-                self?.albums = []
-                self?.fetchAlbums(for: term)
+                self?.movies = []
+                self?.fetchMovies(for: term)
         }.store(in: &subscriptions)
         
     }
     
+    
     func loadMore() {
-        fetchAlbums(for: searchTerm)
+        fetchMovies(for: searchTerm)
     }
     
-    func fetchAlbums(for searchTerm: String) {
+    func fetchMovies(for searchTerm: String) {
         
         guard !searchTerm.isEmpty else {
             return
@@ -55,24 +50,24 @@ class AlbumListViewModel: ObservableObject {
         
         state = .isLoading
         
-        service.fetchAlbums(searchTerm: searchTerm, page: page, limit: limit) { [weak self] result in
+        service.fetchMovies(searchTerm: searchTerm) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                     case .success(let results):
-                        for album in results.results {
-                            self?.albums.append(album)
+                        self?.movies = results.results
+                        if results.resultCount == self?.defaultLimits {
+                            self?.state = .good
+                        } else {
+                            self?.state = .loadedAll
                         }
-                        self?.page += 1
-                        self?.state = (results.results.count == self?.limit) ? .good : .loadedAll
+                    
+                    
                         print("fetched \(results.resultCount)")
                     case .failure(let error):
+                        print("Could not load: \(error)")
                         self?.state = .error("Could not load: \(error.localizedDescription)")
                 }
             }
         }
     }
-    
-
-
-    
 }
