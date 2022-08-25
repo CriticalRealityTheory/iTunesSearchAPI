@@ -7,27 +7,20 @@
 
 import Foundation
 
-enum EnitityType: String {
-    case album
-    case song
-    case movie
-}
-
-
 class APIService {
     
     func fetchAlbums(searchTerm: String, page: Int, limit: Int, completion: @escaping(Result<AlbumResult,APIError>) -> Void) {
-        let url = createURL(for: searchTerm, type: .album, page: page, limit: limit)
+        let url = createURL(for: searchTerm, type: EntityType.album, page: page, limit: limit)
         fetch(type: AlbumResult.self, url: url, completion: completion)
     }
     
     func fetchSongs(searchTerm: String, page: Int, limit: Int, completion: @escaping(Result<SongResult,APIError>) -> Void) {
-        let url = createURL(for: searchTerm, type: .song, page: page, limit: limit)
+        let url = createURL(for: searchTerm, type: EntityType.song, page: page, limit: limit)
         fetch(type: SongResult.self, url: url, completion: completion)
     }
     
     func fetchMovies(searchTerm: String, completion: @escaping(Result<MovieResult,APIError>) -> Void) {
-        let url = createURL(for: searchTerm, type: .movie, page: nil, limit: nil)
+        let url = createURL(for: searchTerm, type: EntityType.movie, page: nil, limit: nil)
         fetch(type: MovieResult.self, url: url, completion: completion)
     }
     
@@ -60,8 +53,7 @@ class APIService {
         }.resume()
     }
 
-
-    func createURL(for searchTerm: String, type: EnitityType, page: Int?, limit: Int?) -> URL? {
+    func createURL(for searchTerm: String, type: EntityType, page: Int?, limit: Int?) -> URL? {
         let baseURL = "https://itunes.apple.com/search"
         var queryItems = [URLQueryItem(name: "term", value: searchTerm),
                           URLQueryItem(name: "entity", value: type.rawValue)]
