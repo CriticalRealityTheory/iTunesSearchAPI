@@ -29,6 +29,15 @@
 		D653312B28B0D517005A0FE9 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D653312A28B0D517005A0FE9 /* MovieListView.swift */; };
 		D653312D28B0D5CE005A0FE9 /* MovieSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D653312C28B0D5CE005A0FE9 /* MovieSearchView.swift */; };
 		D6B3666E289D58A300DD6429 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B3666D289D58A300DD6429 /* AlbumListView.swift */; };
+		D6BA71D528B85DB100DD8D0D /* SongRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA71D428B85DB100DD8D0D /* SongRowView.swift */; };
+		D6BA71D828B8619E00DD8D0D /* ImageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA71D728B8619E00DD8D0D /* ImageLoadingView.swift */; };
+		D6BA71DB28B8654500DD8D0D /* BuyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA71DA28B8654500DD8D0D /* BuyButtonStyle.swift */; };
+		D6BA71DD28B8684500DD8D0D /* AlbumRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA71DC28B8684500DD8D0D /* AlbumRowView.swift */; };
+		D6BA71DF28B86DD200DD8D0D /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA71DE28B86DD200DD8D0D /* BuyButton.swift */; };
+		D6BA71E128B872B300DD8D0D /* MovieRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA71E028B872B300DD8D0D /* MovieRowView.swift */; };
+		D6BA71E328B87F8900DD8D0D /* MovieSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA71E228B87F8900DD8D0D /* MovieSectionView.swift */; };
+		D6BA71E528B87FBB00DD8D0D /* AlbumSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA71E428B87FBB00DD8D0D /* AlbumSectionView.swift */; };
+		D6BA71E728B87FFE00DD8D0D /* SongSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA71E628B87FFE00DD8D0D /* SongSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +64,15 @@
 		D653312A28B0D517005A0FE9 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		D653312C28B0D5CE005A0FE9 /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
 		D6B3666D289D58A300DD6429 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
+		D6BA71D428B85DB100DD8D0D /* SongRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRowView.swift; sourceTree = "<group>"; };
+		D6BA71D728B8619E00DD8D0D /* ImageLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingView.swift; sourceTree = "<group>"; };
+		D6BA71DA28B8654500DD8D0D /* BuyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonStyle.swift; sourceTree = "<group>"; };
+		D6BA71DC28B8684500DD8D0D /* AlbumRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRowView.swift; sourceTree = "<group>"; };
+		D6BA71DE28B86DD200DD8D0D /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
+		D6BA71E028B872B300DD8D0D /* MovieRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRowView.swift; sourceTree = "<group>"; };
+		D6BA71E228B87F8900DD8D0D /* MovieSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSectionView.swift; sourceTree = "<group>"; };
+		D6BA71E428B87FBB00DD8D0D /* AlbumSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSectionView.swift; sourceTree = "<group>"; };
+		D6BA71E628B87FFE00DD8D0D /* SongSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +91,6 @@
 			children = (
 				D6138D2B28B71BBA00C04950 /* SearchView.swift */,
 				D631BC3928B82D4C00C9CAC6 /* SearchAllListView.swift */,
-				D631BC3E28B833B400C9CAC6 /* SearchPlaceholderView.swift */,
 			);
 			name = Search;
 			path = "New Group";
@@ -98,6 +115,7 @@
 		D622DCC9289BA49C00ABEEBD /* iTunesSearchAPI */ = {
 			isa = PBXGroup;
 			children = (
+				D6BA71D928B8652300DD8D0D /* Styling */,
 				D622DCDA289BA4CC00ABEEBD /* Model */,
 				D622DCD9289BA4C400ABEEBD /* View Model */,
 				D622DCD8289BA4BD00ABEEBD /* Views */,
@@ -120,6 +138,7 @@
 		D622DCD8289BA4BD00ABEEBD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6BA71D628B8618700DD8D0D /* Helper */,
 				D6138D2828B71B2A00C04950 /* Search */,
 				D653312928B0D4F6005A0FE9 /* Album */,
 				D653312828B0D4EC005A0FE9 /* Movie */,
@@ -156,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				D631BC3C28B8300600C9CAC6 /* SongListView.swift */,
+				D6BA71D428B85DB100DD8D0D /* SongRowView.swift */,
+				D6BA71E628B87FFE00DD8D0D /* SongSectionView.swift */,
 			);
 			path = Song;
 			sourceTree = "<group>";
@@ -165,6 +186,8 @@
 			children = (
 				D653312A28B0D517005A0FE9 /* MovieListView.swift */,
 				D653312C28B0D5CE005A0FE9 /* MovieSearchView.swift */,
+				D6BA71E028B872B300DD8D0D /* MovieRowView.swift */,
+				D6BA71E228B87F8900DD8D0D /* MovieSectionView.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -174,8 +197,28 @@
 			children = (
 				D6B3666D289D58A300DD6429 /* AlbumListView.swift */,
 				D653311B28B089F3005A0FE9 /* AlbumSearchView.swift */,
+				D6BA71DC28B8684500DD8D0D /* AlbumRowView.swift */,
+				D6BA71E428B87FBB00DD8D0D /* AlbumSectionView.swift */,
 			);
 			path = Album;
+			sourceTree = "<group>";
+		};
+		D6BA71D628B8618700DD8D0D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D6BA71D728B8619E00DD8D0D /* ImageLoadingView.swift */,
+				D631BC3E28B833B400C9CAC6 /* SearchPlaceholderView.swift */,
+				D6BA71DE28B86DD200DD8D0D /* BuyButton.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		D6BA71D928B8652300DD8D0D /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				D6BA71DA28B8654500DD8D0D /* BuyButtonStyle.swift */,
+			);
+			path = Styling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +293,13 @@
 			files = (
 				D631BC3A28B82D4C00C9CAC6 /* SearchAllListView.swift in Sources */,
 				D62992FA289BCAFB00E6B7FA /* AlbumListViewModel.swift in Sources */,
+				D6BA71E528B87FBB00DD8D0D /* AlbumSectionView.swift in Sources */,
+				D6BA71E128B872B300DD8D0D /* MovieRowView.swift in Sources */,
 				D653312B28B0D517005A0FE9 /* MovieListView.swift in Sources */,
 				D622DCCD289BA49C00ABEEBD /* ContentView.swift in Sources */,
+				D6BA71DF28B86DD200DD8D0D /* BuyButton.swift in Sources */,
 				D653312428B0D164005A0FE9 /* FetchState.swift in Sources */,
+				D6BA71E328B87F8900DD8D0D /* MovieSectionView.swift in Sources */,
 				D653312228B0D0E1005A0FE9 /* SongListViewModel.swift in Sources */,
 				D631BC3F28B833B400C9CAC6 /* SearchPlaceholderView.swift in Sources */,
 				D631BC3828B829B200C9CAC6 /* EntityType.swift in Sources */,
@@ -260,10 +307,15 @@
 				D653312628B0D28C005A0FE9 /* MovieListViewModel.swift in Sources */,
 				D62992FE289BCDC600E6B7FA /* Movie.swift in Sources */,
 				D631BC3D28B8300600C9CAC6 /* SongListView.swift in Sources */,
+				D6BA71D528B85DB100DD8D0D /* SongRowView.swift in Sources */,
 				D622DCCB289BA49C00ABEEBD /* iTunesSearchAPIApp.swift in Sources */,
+				D6BA71E728B87FFE00DD8D0D /* SongSectionView.swift in Sources */,
+				D6BA71DB28B8654500DD8D0D /* BuyButtonStyle.swift in Sources */,
 				D62992F8289BCAC300E6B7FA /* Album.swift in Sources */,
 				D653312028B0C901005A0FE9 /* APIService.swift in Sources */,
+				D6BA71DD28B8684500DD8D0D /* AlbumRowView.swift in Sources */,
 				D62992FC289BCDB800E6B7FA /* Song.swift in Sources */,
+				D6BA71D828B8619E00DD8D0D /* ImageLoadingView.swift in Sources */,
 				D6138D2C28B71BBA00C04950 /* SearchView.swift in Sources */,
 				D6B3666E289D58A300DD6429 /* AlbumListView.swift in Sources */,
 				D653311E28B0BC1F005A0FE9 /* APIError.swift in Sources */,
